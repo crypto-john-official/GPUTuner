@@ -26,4 +26,6 @@
 
 <img src="../en/images/Cuda-installation-deb.png" width="80%"/>
 
+- Перед выполнением последней команды `sudo apt-get -y install cuda` рекомендуем закрыть `терминал` и запустить эту команду в новом терминале.
+
 - После последней команды `sudo apt-get -y install cuda` перезагрузите систему. После этого Driver и Cuda должны быть установлены.

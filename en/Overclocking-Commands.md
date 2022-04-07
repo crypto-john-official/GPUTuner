@@ -1,21 +1,19 @@
 
 # Overclocking Commands
 
-## Linux / Windows
-
 ----
 
-### nvidia-smi
+## nvidia-smi (Linux, Windows)
 
 This tool is installed while GPU Driver installation
 
-#### Nvidia GPU list
+### Nvidia GPU list
 
 ```bash
 nvidia-smi -L
 ```
 
-#### Core clock lock
+### Core clock lock
 
 ```bash
 sudo nvidia-smi --lock-gpu-clocks=<value> -i <gpu id>
@@ -27,7 +25,7 @@ sudo nvidia-smi -lgc <value> -i <gpu id>
 
 when `-i`  (gpu id) not used, then for all GPUs will be applied.
 
-##### Examples
+#### Examples
 
 ```bash
 # lock core clock for GPU with id=2 at 900 MHz
@@ -39,7 +37,7 @@ sudo nvidia-smi -lgc 900 -i 2
 sudo nvidia-smi -lgc 900
 ```
 
-#### Reset core clock lock to default/auto
+### Reset core clock lock to default/auto
 
 ```bash
 sudo nvidia-smi --reset-gpu-clocks -i <gpu id>
@@ -55,7 +53,7 @@ To reset for all GPU just drop `-i` as
 sudo nvidia-smi -rgc
 ```
 
-#### Memory clock lock
+### Memory clock lock
 
 **Only works on Nvidia 30xx**
 
@@ -69,7 +67,7 @@ sudo nvidia-smi -lmc <value> -i <gpu id>
 
 when `-i`  (gpu id) not used, then for all GPUs will be applied.
 
-##### Examples
+#### Examples
 
 ```bash
 # lock memory clock for GPU with id=2 at 810 MHz
@@ -81,7 +79,7 @@ sudo nvidia-smi -lmc 810 -i 2
 sudo nvidia-smi -lmc 810
 ```
 
-#### Reset memory clock lock to default/auto
+### Reset memory clock lock to default/auto
 
 **Only works on Nvidia 30xx**
 
@@ -99,7 +97,7 @@ To reset for all GPU just drop `-i` as
 sudo nvidia-smi -rmc
 ```
 
-#### Power limit
+### Power limit
 
 ```bash
 sudo nvidia-smi --power-limit==<value> -i <gpu id>
@@ -111,7 +109,7 @@ sudo nvidia-smi -pl <value> -i <gpu id>
 
 when `-i`  (gpu id) not used, then for all GPUs will be applied.
 
-##### Examples
+#### Examples
 
 ```bash
 # set power limit for GPU with id=2 at 120 W
@@ -125,11 +123,11 @@ sudo nvidia-smi -pl 120
 
 ----
 
-### nvidia-settings
+## nvidia-settings (Linux)
 
 This tool is installed while GPU Driver installation
 
-#### Nvidia GPU list
+### Nvidia GPU list
 
 Note that gpus id might be different that `nvidia-smi` shows, for `nvidia-settings` commands you must use ids that `nvidia-settings` provided.
 
@@ -137,7 +135,7 @@ Note that gpus id might be different that `nvidia-smi` shows, for `nvidia-settin
 nvidia-settings -q gpus
 ```
 
-#### Set core clock offset
+### Set core clock offset
 
 Before using should enable overclocking for GPU by `GPUTuner` or `nvidia-xconfig` tool.
 
@@ -147,7 +145,7 @@ sudo nvidia-settings -a [gpu:<gpu id>]/GPUGraphicsClockOffsetAllPerformanceLevel
 
 To reset to default just set value to zero.
 
-##### Examples
+#### Examples
 
 ```bash
 # set core clock offset for GPU with id=0 at 50 MHz
@@ -159,7 +157,7 @@ sudo nvidia-settings -a [gpu:0]/GPUGraphicsClockOffsetAllPerformanceLevels=50
 sudo nvidia-settings -q [gpu:0]/GPUGraphicsClockOffsetAllPerformanceLevels
 ```
 
-#### Set memory offset (memory transfer rate offset)
+### Set memory offset (memory transfer rate offset)
 
 Before using should enable overclocking for GPU by `GPUTuner` or `nvidia-xconfig` tool.
 
@@ -169,7 +167,7 @@ sudo nvidia-settings -a [gpu:<gpu id>]/GPUMemoryTransferRateOffsetAllPerformance
 
 To reset to default just set value to zero.
 
-##### Examples
+#### Examples
 
 ```bash
 # set memory clock offset for GPU with id=0 at 1800 MHz

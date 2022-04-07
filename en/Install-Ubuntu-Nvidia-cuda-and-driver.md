@@ -26,4 +26,6 @@
 
 <img src="./images/Cuda-installation-deb.png" width="80%"/>
 
-- after last command `sudo apt-get -y install cuda` reboot your system, and you are ready to go.
+- Before last command `sudo apt-get -y install cuda` we recommend close `Terminal` and execute this last command in new `Terminal`.
+
+- After last command `sudo apt-get -y install cuda` reboot your system, and you are ready to go.
